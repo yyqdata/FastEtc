@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FastEtc.iml" filepath="$PROJECT_DIR$/FastEtc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-iconify/android-iconify.iml" filepath="$PROJECT_DIR$/android-iconify/android-iconify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-iconify-fontawesome/android-iconify-fontawesome.iml" filepath="$PROJECT_DIR$/android-iconify-fontawesome/android-iconify-fontawesome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/avloadlibrary/avloadlibrary.iml" filepath="$PROJECT_DIR$/avloadlibrary/avloadlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentation/fragmentation.iml" filepath="$PROJECT_DIR$/fragmentation/fragmentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentation_core/fragmentation_core.iml" filepath="$PROJECT_DIR$/fragmentation_core/fragmentation_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentation_swipeback/fragmentation_swipeback.iml" filepath="$PROJECT_DIR$/fragmentation_swipeback/fragmentation_swipeback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yyq-annotation/yyq-annotation.iml" filepath="$PROJECT_DIR$/yyq-annotation/yyq-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yyq-compiler/yyq-compiler.iml" filepath="$PROJECT_DIR$/yyq-compiler/yyq-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yyq-core/yyq-core.iml" filepath="$PROJECT_DIR$/yyq-core/yyq-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yyq-ec/yyq-ec.iml" filepath="$PROJECT_DIR$/yyq-ec/yyq-ec.iml" />
+    </modules>
+  </component>
+</project>

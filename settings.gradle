@@ -1,0 +1,3 @@
+include ':example', ':yyq-annotation', ':yyq-compiler', ':yyq-core', ':yyq-ec', ':android-iconify', ':android-iconify-fontawesome', ':fragmentation_swipeback', ':fragmentation', ':fragmentation_core', ':avloadlibrary'
+
+//, ':butterknife-compiler', ':butterknife', ':butterknife-lint', ':butterknife-gradle-plugin', ':butterknife-integration-test', ':butterknife-annotations'

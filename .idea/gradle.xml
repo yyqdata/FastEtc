@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/android-iconify" />
+            <option value="$PROJECT_DIR$/android-iconify-fontawesome" />
+            <option value="$PROJECT_DIR$/avloadlibrary" />
+            <option value="$PROJECT_DIR$/example" />
+            <option value="$PROJECT_DIR$/fragmentation" />
+            <option value="$PROJECT_DIR$/fragmentation_core" />
+            <option value="$PROJECT_DIR$/fragmentation_swipeback" />
+            <option value="$PROJECT_DIR$/yyq-annotation" />
+            <option value="$PROJECT_DIR$/yyq-compiler" />
+            <option value="$PROJECT_DIR$/yyq-core" />
+            <option value="$PROJECT_DIR$/yyq-ec" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
