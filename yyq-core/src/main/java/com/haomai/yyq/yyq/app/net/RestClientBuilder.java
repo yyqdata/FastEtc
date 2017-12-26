@@ -10,6 +10,7 @@ import com.haomai.yyq.yyq.app.ui.LoaderCreator;
 import com.haomai.yyq.yyq.app.ui.LoaderStyle;
 import com.haomai.yyq.yyq.app.ui.YyqLoader;
 
+import java.io.File;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -30,6 +31,7 @@ public class RestClientBuilder {
     private ISuccess iSuccess;
     private IFailure iFailure;
     private RequestBody body;
+    private File file;
     private Context context;
     private LoaderStyle loaderStyle;
 
@@ -77,6 +79,17 @@ public class RestClientBuilder {
         return this;
     }
 
+    public final RestClientBuilder file(File file) {
+        this.file = file;
+        return this;
+    }
+
+    public final RestClientBuilder file(String filePath) {
+        this.file = new File(filePath);
+        return this;
+    }
+
+
     public final RestClientBuilder load(Context context, LoaderStyle style) {
         this.context = context;
         this.loaderStyle = style;
@@ -89,6 +102,6 @@ public class RestClientBuilder {
     }
 
     public final RestClient build() {
-        return new RestClient(url, PARAMS, iRequest, iError, iSuccess, iFailure, body, context, loaderStyle);
+        return new RestClient(url, PARAMS, iRequest, iError, iSuccess, iFailure, body, file, context, loaderStyle);
     }
 }

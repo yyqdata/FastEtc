@@ -10,9 +10,12 @@ import com.haomai.yyq.yyq.app.net.callback.RequestCallbacks;
 import com.haomai.yyq.yyq.app.ui.LoaderStyle;
 import com.haomai.yyq.yyq.app.ui.YyqLoader;
 
+import java.io.File;
 import java.util.Map;
 import java.util.WeakHashMap;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +34,7 @@ public class RestClient {
     private final ISuccess ISUCCESS;
     private final IFailure IFAILURE;
     private final RequestBody BODY;
+    private final File FILE;
     private final Context CONTEXT;
     private final LoaderStyle LOADER_STYLE;
 
@@ -41,6 +45,7 @@ public class RestClient {
                       ISuccess iSuccess,
                       IFailure iFailure,
                       RequestBody BODY,
+                      File file,
                       Context context,
                       LoaderStyle loaderStyle) {
         this.URL = url;
@@ -50,6 +55,7 @@ public class RestClient {
         this.ISUCCESS = iSuccess;
         this.IFAILURE = iFailure;
         this.BODY = BODY;
+        this.FILE = file;
         this.CONTEXT = context;
         this.LOADER_STYLE = loaderStyle;
     }
@@ -74,11 +80,24 @@ public class RestClient {
             case PUT:
                 call = service.put(URL, PARAMS);
                 break;
+            case PUT_RAW:
+                call = service.put_raw(URL, BODY);
+                break;
             case POST:
                 call = service.post(URL, PARAMS);
                 break;
+            case POST_RAW:
+                call = service.post_raw(URL, BODY);
+                break;
             case DELETE:
                 call = service.delete(URL, PARAMS);
+                break;
+            case UPLOAD:
+                final RequestBody requestBody =
+                        MultipartBody.create(MediaType.parse(MultipartBody.FORM.toString()), FILE);
+                final MultipartBody.Part part =
+                        MultipartBody.Part.create(requestBody);
+                call = service.upload(URL, part);
                 break;
             default:
                 break;
@@ -98,11 +117,29 @@ public class RestClient {
     }
 
     public final void put() {
-        request(HttpMethods.PUT);
+        if (BODY == null) {
+            request(HttpMethods.PUT);
+        } else {
+            if (!PARAMS.isEmpty()) {
+                throw new RuntimeException("param must be null!");
+            }
+            request(HttpMethods.PUT_RAW);
+        }
     }
 
     public final void post() {
-        request(HttpMethods.POST);
+        if (BODY == null) {
+            request(HttpMethods.POST);
+        } else {
+            if (!PARAMS.isEmpty()) {
+                throw new RuntimeException("param must be null!");
+            }
+            request(HttpMethods.POST_RAW);
+        }
+    }
+
+    public final void upload() {
+        request(HttpMethods.UPLOAD);
     }
 
     public final void delete() {
